@@ -1,0 +1,33 @@
+name: Pylint
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pylint flake8
+    - name: Analysing the code with pylint
+      run: |
+        pylint gpao/__init__.py
+        pylint gpao/builder.py
+        pylint gpao/job.py
+        pylint gpao/project.py
+        pylint test.py
+    - name: Analysing the code with flake8
+      run: |
+        flake8 gpao/__init__.py
+        flake8 gpao/builder.py
+        flake8 gpao/job.py
+        flake8 gpao/project.py
+        flake8 test.py
