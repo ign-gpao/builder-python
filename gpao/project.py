@@ -26,7 +26,9 @@ class Project:
         self.name = name
 
         self.jobs = []
-        self.jobs.extend(jobs)
+
+        if jobs is not None:
+            self.jobs.extend(jobs)
 
         self.deps = []
         if deps is not None:
