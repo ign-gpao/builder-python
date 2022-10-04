@@ -11,7 +11,7 @@ setup(
     description="Write a json's GPAO file",
     long_description_content_type="text/markdown",
     long_description=README,
-    url="https://github.com/arnaudbirk/ign-gpao-project-builder.git",
+    url="https://github.com/ign-gpao/builder-python.git",
     author="Arnaud Birk",
     author_email="arnaud.birk@ign.fr",
     license="MIT",
