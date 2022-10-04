@@ -48,6 +48,92 @@ Vous pouvez la télécharger depuis les dépôts officiels de [PyPI](https://pyp
     builder.add_project(project3)
 
     builder.save_as_json("project.json")
+  
+Cet exemple sauvegarde un fichier `project.json` avec le contenu suivant : 
+
+```
+{
+    "projects": [
+        {
+            "name": "project1",
+            "jobs": [
+                {
+                    "name": "job1",
+                    "command": "touch file",
+                    "tags": [
+                        "tag1",
+                        "tag2"
+                    ]
+                },
+                {
+                    "name": "job2",
+                    "command": "touch file"
+                },
+                {
+                    "name": "job3",
+                    "command": "touch file",
+                    "deps": [
+                        {
+                            "id": 0
+                        },
+                        {
+                            "id": 1
+                        }
+                    ],
+                    "tags": [
+                        "tag1",
+                        "tag2"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "project2",
+            "jobs": [
+                {
+                    "name": "job4",
+                    "command": "touch file"
+                },
+                {
+                    "name": "job5",
+                    "command": "touch file",
+                    "deps": [
+                        {
+                            "id": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "project3",
+            "jobs": [
+                {
+                    "name": "job6",
+                    "command": "touch file"
+                },
+                {
+                    "name": "job7",
+                    "command": "touch file",
+                    "deps": [
+                        {
+                            "id": 0
+                        }
+                    ]
+                }
+            ],
+            "deps": [
+                {
+                    "id": 0
+                },
+                {
+                    "id": 1
+                }
+            ]
+        }
+    ]
+}
+```
     
 ### Licence
 
