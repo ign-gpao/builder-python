@@ -1,5 +1,9 @@
 # 📑 Changelog
 
+## [0.7.1](https://github.com/ign-gpao/builder-python/tree/0.7.1) (2022-10-04)
+
+[Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.7.0...0.7.1)
+
 ## [0.7.0](https://github.com/ign-gpao/builder-python/tree/0.7.0) (2022-10-04)
 
 [Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.6.0...0.7.0)
