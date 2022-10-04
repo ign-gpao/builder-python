@@ -1,16 +1,18 @@
 # IGN GPAO Project Builder
 
-IGN GPAO Project Builder is a basic a builder for Json's GPAO project
+IGN GPAO Project builder est une bibliothèque python de création de projet au format JSON pour la [GPAO](https://github.com/ign-gpao).
+
+## Prérequis
+
+ - Python 3 ou plus
 
 ## Installation
 
-You can install the IGN GPAO Project Builder from [PyPI](https://pypi.org/project/ign-gpao-project-builder/):
+Vous pouvez la télécharger depuis les dépôts officiels de [PyPI](https://pypi.org/project/ign-gpao-project-builder/):
 
-    python -m pip install ign-gpao-project-builder
+    pip install ign-gpao-project-builder
 
-## How to use
-
-IGN GPAO Project Builder is a small library named `ign-gpao-project-builder`
+## Exemple d'utilisation
 
     from gpao.builder import Builder
     from gpao.project import Project
@@ -46,3 +48,9 @@ IGN GPAO Project Builder is a small library named `ign-gpao-project-builder`
     builder.add_project(project3)
 
     builder.save_as_json("project.json")
+    
+### Licence
+
+Ce projet est sous licence CECILL-B (voir [LICENSE.md](https://github.com/ign-gpao/.github/blob/main/LICENSE.md)).
+
+[![IGN](https://github.com/ign-gpao/.github/blob/main/images/logo_ign.png)](https://www.ign.fr)
