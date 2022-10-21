@@ -45,3 +45,4 @@ class Builder:
                 ensure_ascii=False,
                 indent=4
                 )
+        Project.reset()

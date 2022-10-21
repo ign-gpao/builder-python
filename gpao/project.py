@@ -20,7 +20,7 @@ class Project:
 
     """ Project class """
 
-    cpt_id = 0
+    _cpt_id = 0
 
     def __init__(self, name, jobs=None, deps=None):
         self.name = name
@@ -38,8 +38,13 @@ class Project:
                 for project in deps:
                     self.deps.append({"id": project.get_internal_id()})
 
-        self.internal_id = Project.cpt_id
-        Project.cpt_id += 1
+        self.internal_id = Project._cpt_id
+        Project._cpt_id += 1
+
+    @staticmethod
+    def reset():
+        """ Counter reset """
+        Project._cpt_id = 0
 
     def get_internal_id(self):
         """ Get internal id """

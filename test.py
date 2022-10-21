@@ -34,3 +34,15 @@ builder = Builder([project1, project2])
 builder.add_project(project3)
 
 builder.save_as_json("project.json")
+
+
+job8 = Job("job8", "touch file")
+job8bis = Job("job8bis", "touch file", job8)
+project4 = Project("project4",  [job8, job8bis])
+
+job9 = Job("job9", "touch file")
+project5 = Project("project5",  [job9], [project4])
+
+builder = Builder([project4, project5])
+
+builder.save_as_json("project2.json")
