@@ -1,5 +1,21 @@
 # 📑 Changelog
 
+## [Unreleased](https://github.com/ign-gpao/builder-python/tree/HEAD)
+
+[Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.7.3...HEAD)
+
+### 🐛 Bug fixes
+
+- Pb quand on crée des projets avec dépendances, plusieurs fois [\#7](https://github.com/ign-gpao/builder-python/issues/7)
+
+## [0.7.3](https://github.com/ign-gpao/builder-python/tree/0.7.3) (2022-10-26)
+
+[Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.7.2...0.7.3)
+
+### 🐛 Bug fixes
+
+- \#patch fix reset dependencies counter after save as json [\#8](https://github.com/ign-gpao/builder-python/pull/8) ([arnaudbirk](https://github.com/arnaudbirk))
+
 ## [0.7.2](https://github.com/ign-gpao/builder-python/tree/0.7.2) (2022-10-04)
 
 [Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.7.1...0.7.2)
