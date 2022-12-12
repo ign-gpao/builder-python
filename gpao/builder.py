@@ -1,6 +1,7 @@
 """ Builder's class of the gpao """
 
 import json
+import requests
 from gpao.project import Project
 
 
@@ -45,4 +46,33 @@ class Builder:
                 ensure_ascii=False,
                 indent=4
                 )
+        Project.reset()
+
+    def send_project_to_api(self, base_url_api):
+        """ Send To API """
+        json_gpao = {"projects": []}
+        for project in self.projects:
+            Project.reorganize_job_dependencies(project)
+            json_gpao["projects"].append(project)
+
+        json_str = json.dumps(
+                json_gpao,
+                default=handler,
+                ensure_ascii=False,
+                indent=4
+                )
+
+        url = base_url_api+"/api/project"
+        try:
+            headers = {
+                "Content-type": "application/json",
+            }
+
+            req = requests.put(url, data=json_str, headers=headers, timeout=60)
+            req.raise_for_status()
+        except requests.exceptions.RequestException as exception:
+            print("Impossible d'envoyer la requête API sur",
+                  url, ": ERROR => ",
+                  exception)
+
         Project.reset()
