@@ -5,4 +5,4 @@ Version of the module
 """
 
 # Version of the ign-gpao-project-builder
-__version__ = "0.7.3"
+__version__ = "0.8.0"

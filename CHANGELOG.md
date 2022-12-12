@@ -2,11 +2,19 @@
 
 ## [Unreleased](https://github.com/ign-gpao/builder-python/tree/HEAD)
 
-[Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.7.3...HEAD)
+[Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.8.0...HEAD)
 
-### 🐛 Bug fixes
+### 🚀 Enhancements
 
-- Pb quand on crée des projets avec dépendances, plusieurs fois [\#7](https://github.com/ign-gpao/builder-python/issues/7)
+- Envoie de projet sur l'api [\#3](https://github.com/ign-gpao/builder-python/issues/3)
+
+## [0.8.0](https://github.com/ign-gpao/builder-python/tree/0.8.0) (2022-12-12)
+
+[Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.7.3...0.8.0)
+
+### 📁 Other pull requests
+
+- 3 envoie de projet sur lapi [\#9](https://github.com/ign-gpao/builder-python/pull/9) ([arnaudbirk](https://github.com/arnaudbirk))
 
 ## [0.7.3](https://github.com/ign-gpao/builder-python/tree/0.7.3) (2022-10-26)
 
@@ -14,6 +22,7 @@
 
 ### 🐛 Bug fixes
 
+- Pb quand on crée des projets avec dépendances, plusieurs fois [\#7](https://github.com/ign-gpao/builder-python/issues/7)
 - \#patch fix reset dependencies counter after save as json [\#8](https://github.com/ign-gpao/builder-python/pull/8) ([arnaudbirk](https://github.com/arnaudbirk))
 
 ## [0.7.2](https://github.com/ign-gpao/builder-python/tree/0.7.2) (2022-10-04)
