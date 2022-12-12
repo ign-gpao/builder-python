@@ -45,4 +45,5 @@ project5 = Project("project5",  [job9], [project4])
 
 builder = Builder([project4, project5])
 
-builder.save_as_json("project2.json")
+# builder.save_as_json("project2.json")
+builder.send_project_to_api("http://localhost:8080")
