@@ -1,16 +1,16 @@
 # 📑 Changelog
 
-## [Unreleased](https://github.com/ign-gpao/builder-python/tree/HEAD)
+## [0.9.0](https://github.com/ign-gpao/builder-python/tree/0.9.0) (2023-01-06)
 
-[Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.8.0...HEAD)
-
-### 🚀 Enhancements
-
-- Envoie de projet sur l'api [\#3](https://github.com/ign-gpao/builder-python/issues/3)
+[Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.8.0...0.9.0)
 
 ## [0.8.0](https://github.com/ign-gpao/builder-python/tree/0.8.0) (2022-12-12)
 
 [Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.7.3...0.8.0)
+
+### 🚀 Enhancements
+
+- Envoie de projet sur l'api [\#3](https://github.com/ign-gpao/builder-python/issues/3)
 
 ### 📁 Other pull requests
 
