@@ -1,6 +1,6 @@
 # IGN GPAO Project Builder
 
-IGN GPAO Project builder est une bibliothèque python de création de projet au format JSON pour la [GPAO](https://github.com/ign-gpao).
+IGN GPAO Project Builder est une bibliothèque python de création de projet au format JSON pour la [GPAO](https://github.com/ign-gpao).
 
 ## Prérequis
 
