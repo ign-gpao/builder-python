@@ -83,7 +83,7 @@ class Project:
                 return cpt
             cpt += 1
 
-        return -1
+        raise ValueError(f"No job match for job_id = {job_id}")
 
     def to_json(self):
         """ Convert to json """

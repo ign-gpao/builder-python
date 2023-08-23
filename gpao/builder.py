@@ -76,3 +76,17 @@ class Builder:
                   exception)
 
         Project.reset()
+
+    def send_project_and_save(self, base_url_api, file_json):
+        self.send_project_to_api(base_url_api)
+
+        json_gpao = {"projects": self.projects}
+        with open(file_json, "w", encoding="utf-8") as fjson:
+            json.dump(
+                json_gpao,
+                fjson,
+                default=handler,
+                ensure_ascii=False,
+                indent=4
+                )
+

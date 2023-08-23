@@ -47,3 +47,16 @@ builder = Builder([project4, project5])
 
 # builder.save_as_json("project2.json")
 builder.send_project_to_api("http://localhost:8080")
+
+
+job10 = Job("job10", "touch file")
+job10bis = Job("job10bis", "touch file", job10)
+project6 = Project("project6",  [job10, job10bis])
+
+job11 = Job("job11", "touch file")
+project7 = Project("project7",  [job11], [project6])
+
+builder = Builder([project6, project7])
+
+# builder.save_as_json("project2.json")
+builder.send_project_and_save("http://localhost:8080", "project1.json")
