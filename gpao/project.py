@@ -9,9 +9,10 @@ def handler(obj):
     """ handler """
     if isinstance(obj, Job):
         dictionary = obj.__dict__.copy()
-        del dictionary["internal_id"]
+        noise_keys = ["internal_id"]
 
-        dictionary = {k: v for k, v in dictionary.items() if v}
+        dictionary = {k: v for k, v in dictionary.items() if v and (k not in noise_keys)}
+
         return dictionary
     return None
 
@@ -20,10 +21,11 @@ class Project:
 
     """ Project class """
 
-    _cpt_id = 0
+    cpt_id = 0
 
     def __init__(self, name, jobs=None, deps=None):
         self.name = name
+        self.reorganized = False
 
         self.jobs = []
 
@@ -38,13 +40,13 @@ class Project:
                 for project in deps:
                     self.deps.append({"id": project.get_internal_id()})
 
-        self.internal_id = Project._cpt_id
-        Project._cpt_id += 1
+        self.internal_id = Project.cpt_id
+        Project.cpt_id += 1
 
     @staticmethod
     def reset():
         """ Counter reset """
-        Project._cpt_id = 0
+        Project.cpt_id = 0
 
     def get_internal_id(self):
         """ Get internal id """
@@ -65,20 +67,20 @@ class Project:
         """ Get name of the project """
         return self.name
 
-    @staticmethod
-    def reorganize_job_dependencies(project):
+    def reorganize_job_dependencies(self):
         """ Reorganize job's id in deps list """
-        for job in project.jobs:
+        for job in self.jobs:
             if job.deps:
                 for dep in job.deps:
                     job_id = dep['id']
-                    dep['id'] = Project.find_job_index(project, job_id)
+                    dep['id'] = self.find_job_index(job_id)
 
-    @staticmethod
-    def find_job_index(project, job_id):
+        self.reorganized = True
+
+    def find_job_index(self, job_id):
         """ find job's index in project and return this position """
         cpt = 0
-        for job in project.jobs:
+        for job in self.jobs:
             if job.get_internal_id() == job_id:
                 return cpt
             cpt += 1
@@ -93,6 +95,11 @@ class Project:
 
         dictionary = {k: v for k, v in dictionary.items() if v}
 
-        Project.reorganize_job_dependencies(self)
+        if not self.reorganized:
+            self.reorganize_job_dependencies()
 
         return json.dumps(dictionary, default=handler, indent=4)
+
+    def is_reorganized(self):
+        """ get reorganized var """
+        return self.reorganized

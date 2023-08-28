@@ -30,6 +30,11 @@ class Job:
         self.internal_id = Job.cpt_id
         Job.cpt_id += 1
 
+    @staticmethod
+    def reset():
+        """ Counter reset """
+        Job.cpt_id = 0
+
     def get_internal_id(self):
         """ Get internal id """
         return self.internal_id
