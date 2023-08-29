@@ -11,7 +11,8 @@ def handler(obj):
         dictionary = obj.__dict__.copy()
         noise_keys = ["internal_id"]
 
-        dictionary = {k: v for k, v in dictionary.items() if v and (k not in noise_keys)}
+        dictionary = {k: v for k,
+                      v in dictionary.items() if v and (k not in noise_keys)}
 
         return dictionary
     return None

@@ -12,7 +12,8 @@ def handler(obj):
 
     noise_keys = ["internal_id", "reorganized"]
 
-    dictionary = {k: v for k, v in dictionary.items() if v and (k not in noise_keys)}
+    dictionary = {k: v for k,
+                  v in dictionary.items() if v and (k not in noise_keys)}
 
     return dictionary
 
