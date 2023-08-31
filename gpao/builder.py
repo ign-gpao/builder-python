@@ -8,7 +8,7 @@ from gpao.job import Job
 
 def handler(obj):
     """ handler"""
-    dictionary = obj.__dict__.copy()
+    dictionary = obj.__dict__
 
     noise_keys = ["internal_id", "reorganized"]
 
@@ -25,8 +25,8 @@ class Builder:
         """constructeur"""
 
         self.projects = []
-        Project.reset()
-        Job.reset()
+        # Project.reset()
+        # Job.reset()
 
         if projects is not None:
             self.projects.extend(projects)
