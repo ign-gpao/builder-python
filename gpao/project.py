@@ -8,7 +8,7 @@ from gpao.job import Job
 def handler(obj):
     """ handler """
     if isinstance(obj, Job):
-        dictionary = obj.__dict__.copy()
+        dictionary = obj.__dict__
         noise_keys = ["internal_id"]
 
         dictionary = {k: v for k,
