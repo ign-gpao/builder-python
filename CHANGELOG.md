@@ -1,5 +1,13 @@
 # 📑 Changelog
 
+## [0.11.0](https://github.com/ign-gpao/builder-python/tree/0.11.0) (2023-09-01)
+
+[Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.10.0...0.11.0)
+
+### 📁 Other pull requests
+
+- fix dependencies [\#12](https://github.com/ign-gpao/builder-python/pull/12) ([arnaudbirk](https://github.com/arnaudbirk))
+
 ## [0.10.0](https://github.com/ign-gpao/builder-python/tree/0.10.0) (2023-04-11)
 
 [Full Changelog](https://github.com/ign-gpao/builder-python/compare/0.9.0...0.10.0)
