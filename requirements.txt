@@ -1,2 +1,2 @@
-pytest
-requests-mock
+pytest==7.4.3
+requests-mock==1.11.0
