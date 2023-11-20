@@ -149,6 +149,54 @@ Cet exemple sauvegarde un fichier `project.json` avec le contenu suivant :
 }
 ```
 
+### Création de jobs avec attributs geometry
+
+On peut définir une géométrie pour chaque job avec l'attribut geometry. Dans la base de données elle est définie en WGS84 (4326).
+
+Cette geometrie peut-être renseignée en :
+* binaire, exemple :
+``` python
+geom1 = "0106000020E61000000100000001030000000100000005000000500834AD72D51540CB389A27B9084740C28E5BF782D715401DA21CCD7B0E474072E2A118C5191640D6667F3B4D0E4740D9D3A6EEA6171640108BB99F8A084740500834AD72D51540CB389A27B9084740"
+job_with_geom1 = Job("job_with_geom", "sleep 5", geometry=geom1)
+```
+* texte, exemples :
+``` python 
+geom2 = 'SRID=2154;POINT(736000 6917000)'
+job_with_geom2 = Job("job_with_geom", "sleep 5", geometry=geom2)
+
+geom3 = "SRID=2154;POLYGON((736000 6917000 , 737000 6917000 , 737000 6918000 , 736000 6918000 , 736000 6917000))"
+job_with_geom3 = Job("job_with_geom", "sleep 5", geometry=geom3)
+
+```
+
+Elle peut aussi être définie à postériori avec une liste de coordonnées et le SRID, exemple :
+* pour un point
+``` python
+job_with_geom4 = Job("job_with_geom", "sleep 5")
+job_with_geom4.add_geometry_from_coordinates('2154', [(736000, 6917000)])
+
+```
+* pour un polygone (triangle = 3 coords, carré = 4 coords, etc)
+``` python
+job_with_geom5 = Job("job_with_geom", "sleep 5")
+job_with_geom5.add_geometry_from_coordinates('2154', [(736000, 6917000) , (737000, 6917000) , (737000, 6918000) , (736000, 6918000)])
+```
+
+Ci-dessous, un exemple de fonction qui ajoute une geometrie à partir du nom des jobs suivants la règle d'appellation "Name_AAAA_XXXX_YYYYY_LA93_IGN69" :
+``` python
+def add_geometry_from_job_name(job):
+    job_name = job.name
+    job_name = job_name.split('_')
+    SRID = 4326
+    if job_name[4]=='LA93':
+        SRID = 2154
+    coords = [(job_name[2]+"000", job_name[3]+"000")]
+    job.add_geometry_from_coordinates(SRID, coords)
+
+job_with_geom6 = Job("Semis_2023_0736_6917_LA93_IGN69", "sleep 5")
+add_geometry_from_job_name(job_with_geom6)
+```
+
 ### Licence
 
 Ce projet est sous licence CECILL-B (voir [LICENSE.md](https://github.com/ign-gpao/.github/blob/main/LICENSE.md)).
