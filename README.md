@@ -149,9 +149,9 @@ Cet exemple sauvegarde un fichier `project.json` avec le contenu suivant :
 }
 ```
 
-### Création de jobs avec attributs geometry
+### Création de jobs avec attribut geometry
 
-On peut définir une géométrie pour chaque job avec l'attribut geometry. Dans la base de données elle est définie en WGS84 (4326).
+On peut définir une géométrie pour chaque job avec l'attribut geometry. Dans la base de données elle est définie en WGS84 (epsg:4326).
 
 Cette geometrie peut-être renseignée en :
 * binaire, exemple :
