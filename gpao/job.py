@@ -48,16 +48,17 @@ class Job:
         else:
             self.deps.append(dep)
 
-    def add_geometry_from_coordinates(self, SRID, coords):
+    def add_geometry_from_coordinates(self, srid, coords):
+        """ Add a geometry to this job from coordinates list and SRID"""
         geom = ""
-        if len(coords)==1:
-            geom = f"SRID={SRID};POINT({coords[0][0]} {coords[0][1]})"
+        if len(coords) == 1:
+            geom = f"SRID={srid};POINT({coords[0][0]} {coords[0][1]})"
         elif len(coords) >= 3:
-            geom = f"SRID={SRID};POLYGON(("
-            for c in coords:
-                geom += f"{c[0]} {c[1]} , "
+            geom = f"SRID={srid};POLYGON(("
+            for coord in coords:
+                geom += f"{coord[0]} {coord[1]} , "
             geom += f"{coords[0][0]} {coords[0][1]}))"
-        else : 
+        else:
             raise RuntimeError("Error on coordinates")
         self.geometry = geom
 
